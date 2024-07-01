@@ -28,8 +28,8 @@ const result = (array, method) => {
   }, initializer[method]);
 };
 
-console.log(result(arr, "add"));
-console.log(result(arr, "mul"));
-console.log(result(arr, "div"));
-console.log(result(arr, "sub"));
-console.log(result(arr, "abb"));
+console.log(result(arr, "add")); //5
+console.log(result(arr, "mul")); //120
+console.log(result(arr, "div")); //0.008333333333333333
+console.log(result(arr, "sub")); //-15
+console.log(result(arr, "abb")); //throw new Error("Invalid method");
