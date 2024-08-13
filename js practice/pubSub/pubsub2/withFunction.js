@@ -22,30 +22,45 @@ function Events() {
   };
 
   this.subscribeOnce = function (name, callback) {
-     const present = this.subscribeOnceList.has(name);
-     if(present){
-        const existingList = this.subscribeOnceList.get(name);
-        this.subscribeOnceList.set(name, [...existingList, callback]);
-      } else {
-        this.subscribeOnceList.set(name, [callback]);
-      }
+    const present = this.subscribeOnceList.has(name);
+    if (present) {
+      const existingList = this.subscribeOnceList.get(name);
+      this.subscribeOnceList.set(name, [...existingList, callback]);
+    } else {
+      this.subscribeOnceList.set(name, [callback]);
+    }
   };
 
   this.subscribeOnceAsync = async function (name) {
-    return new Promise((resolve, reject)=>{
-        const present = this.subscribeOnceList.has(name);
-     if(present){
+    return new Promise((resolve, reject) => {
+      const present = this.subscribeOnceList.has(name);
+      if (present) {
         const existingList = this.subscribeOnceList.get(name);
         this.subscribeOnceList.set(name, [...existingList, resolve]);
       } else {
         this.subscribeOnceList.set(name, [resolve]);
       }
-    })
+    });
   };
 
-  this.publish = function (name, data) {};
+  this.publish = function (name, data) {
+    const subscribeCallBacks = this.subscribeList.get(name) || [];
+    subscribeCallBacks.forEach((fn) => fn(data));
 
-  this.publishAll = function (data) {};
+    const subscribeOnceCallBacks = this.subscribeOnceList.get(name) || [];
+    subscribeOnceCallBacks.forEach((fn) => fn(data));
+    this.subscribeOnceList.set(name,[])
+
+    const subscribeOnceAsyncCallBacks =
+      this.subscribeOnceAsyncList.get(name) || [];
+    subscribeOnceAsyncCallBacks.forEach((fn) => fn(data));
+    this.subscribeOnceAsyncList.set(name,[])
+
+  };
+
+  this.publishAll = function (data) {
+
+  };
 }
 
 // Test cases
@@ -101,3 +116,18 @@ events.subscribeOnceAsync("new-user").then(function (payload) {
 events.publish("new-user", "Foo Once Async");
 //output: "Sending Q2 News to: Foo Once Async"
 //output: "I am invoked once Foo Once Async"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
