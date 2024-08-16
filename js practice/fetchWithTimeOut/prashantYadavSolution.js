@@ -1,7 +1,7 @@
 const fetchWithTimeout = (url, duration) => {
   return new Promise((resolve, reject) => {
     const controller = new AbortController();
-    const signal = controller.signal;
+    const signal = controller.signal; //this will help to identify the API 
     let timerId = null;
     fetch(url, { signal })
       .then((resp) => {
