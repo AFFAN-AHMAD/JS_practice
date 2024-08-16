@@ -33,6 +33,10 @@ fetchWithTimeout("https://jsonplaceholder.typicode.com/todos/1", 10)
   .catch((error) => {
     console.error(error);
   });
+class name {
+    constructor(parameters) {
+    }
+}
 
 // Aborted
 // error
