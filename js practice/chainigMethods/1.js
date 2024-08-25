@@ -29,6 +29,6 @@ const calculator = new Calculator(23)
 calculator.add(10).sub(2).multiply(2).divide(4);
 console.log("calculator.total", calculator.total); // Output: calculator.total 8
 
-const newCal = new Calculator(3)
+const newCal = new Calculator()
 newCal.multiply(10).sub(5);
 console.log("newCal.total", newCal.total);
