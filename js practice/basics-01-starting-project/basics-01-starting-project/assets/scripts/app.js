@@ -1,5 +1,12 @@
- let currentResult = 0;
+ let defaultResult = 0;
 
- currentResult= currentResult + 10;
+ let currentResult= defaultResult;
 
- outputResult(currentResult, "")
+
+ function add() {
+    console.log('currentResult',currentResult);
+    currentResult = currentResult + userInput.value;
+    outputResult(currentResult, "")
+ }
+ addBtn.addEventListener('click',add)
+ 
