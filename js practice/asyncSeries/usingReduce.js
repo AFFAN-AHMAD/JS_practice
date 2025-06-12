@@ -34,13 +34,13 @@ asyncSeriesExecuter(promises);
 
 
 
-let array = [1,2,3,4,5];
+// let array = [1,2,3,4,5];
 
-array.reduce((acc,curr,index)=>{
-  console.log('index11111',index);
-}, 0);
+// array.reduce((acc,curr,index)=>{
+//   console.log('index11111',index);
+// }, 0);
 
 
-array.forEach((item, index)=>{
-  console.log('indexeachh',index);
-})
+// array.forEach((item, index)=>{
+//   console.log('indexeachh',index);
+// })
