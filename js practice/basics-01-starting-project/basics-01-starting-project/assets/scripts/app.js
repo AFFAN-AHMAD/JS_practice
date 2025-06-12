@@ -6,37 +6,36 @@ function clearInput() {
   userInput.value = "";
 }
 function add() {
-  const enteredValue = userInput.value;
-  if (enteredValue === "") return;
-  currentResult = currentResult + Number(enteredValue);
-  calcOutput = `${calcOutput} + ${enteredValue}`;
+  if (userInput.value === "") return;
+  calcOutput = `${currentResult} + ${userInput.value}`;
+  currentResult = currentResult + Number(userInput.value);
   outputResult(currentResult, calcOutput);
   clearInput();
 }
 
 function subtract() {
-  const enteredValue = userInput.value;
-  if (enteredValue === "") return;
-  currentResult = currentResult - Number(enteredValue);
-  calcOutput = `${calcOutput} - ${enteredValue}`;
+  if (userInput.value === "") return;
+
+  calcOutput = `${currentResult} - ${userInput.value}`;
+  currentResult = currentResult - Number(userInput.value);
   outputResult(currentResult, calcOutput);
   clearInput();
 }
 
 function multiply() {
-  const enteredValue = userInput.value;
-  if (enteredValue === "") return;
-  currentResult = currentResult * Number(enteredValue);
-  calcOutput = `${calcOutput} * ${enteredValue}`;
+  if (userInput.value === "") return;
+
+  calcOutput = `${currentResult} * ${userInput.value}`;
+  currentResult = currentResult * Number(userInput.value);
   outputResult(currentResult, calcOutput);
   clearInput();
 }
 
 function divide() {
-  const enteredValue = userInput.value;
-  if (enteredValue === "") return;
-  currentResult = currentResult / Number(enteredValue);
-  calcOutput = `${calcOutput} / ${enteredValue}`;
+  if (userInput.value === "") return;
+
+  calcOutput = `${currentResult} / ${userInput.value}`;
+  currentResult = currentResult / Number(userInput.value);
   outputResult(currentResult, calcOutput);
   clearInput();
 }
