@@ -1,0 +1,8 @@
+Vim Commands
+vim filename - Open or create a file in Vim.
+i - Enter insert mode to start typing.
+Esc - Exit insert mode and return to command mode.
+:w - Save the current file.
+:w filename - Save the file with a new name.
+:wq - Save and quit Vim.
+:q! - Quit Vim without saving.

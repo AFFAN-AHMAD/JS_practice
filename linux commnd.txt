@@ -1,0 +1,11 @@
+sudo mv filename /bin/ - Move a file into the /bin directory (requires superuser privileges).
+chmod +x filename - Make a file executable.
+ls /bin/filename - Verify if a file exists in the /bin directory.
+passwd username - Change the password for a user.
+mount -o remount,rw / - Remount the root filesystem as writable.
+ls -l filename - View file permissions.
+chmod u+x filename - Add execute permissions for the file owner.
+chmod o-w filename - Remove write permissions for others.
+chmod a=r filename - Set read-only permissions for everyone.
+chmod 777 filename - Give full permissions to everyone.
+lsblk - View disk and partition information.
